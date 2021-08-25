@@ -54,7 +54,7 @@ const removeDocument = async(document) => {
     const collection = _db.collection('to-do-collection')
 
     try {
-        const results = await collection.updateOne({ _id: document._id });
+        const results = await collection.deleteOne({ _id: document._id });
         return results;
     } catch (error) {
         throw new Error(error)
